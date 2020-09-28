@@ -187,9 +187,7 @@ describe('SignUp Controller', () => {
     const { sut, addAccountStub } = makeSut()
 
     jest.spyOn(addAccountStub, 'add').mockImplementationOnce(async () => {
-      return new Promise((resolve, reject) => {
-        reject(new Error())
-      })
+      throw new Error()
     })
 
     const httpRequest = {
